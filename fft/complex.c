@@ -32,9 +32,8 @@ _Dcomplex cadd(_Dcomplex x, _Dcomplex y) {
 }
 
 double  carg(_Dcomplex z) {
-	if (z.real > 0) return atan(z.imag / z.real);
-	else if (z.real == 0) return(z.imag < 0) ? -PI / 2 : PI / 2;
-	else return (z.imag < 0) ? atan(z.imag / z.real) - PI : PI + atan(z.imag / z.real);
+	if (z.real == 0) return(z.imag < 0) ? -PI / 2 : PI / 2;
+	else return atan2(z.imag, z.real);
 }
 
 _Dcomplex casin(_Dcomplex z) {
